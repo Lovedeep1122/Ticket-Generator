@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Conf Ticket Generator</title>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="icon" href="favicon-32x32.png"> 
+</head>
+<body>
+    
+  <img src="pattern-lines.svg" class="bg-pattern-lines" alt="">
+  
+  <img src="pattern-squiggly-line-top.svg" class="bg-pattern-top" alt="">
+  
+  <img src="pattern-squiggly-line-bottom-desktop.svg" class="bg-pattern-bottom" alt="">
+  
+  <img src="pattern-circle.svg" class="bg-pattern-circle" alt="">
+   
+  
+<header class="main-header">
+  <div class="logo">
+    
+    <img  src="logo-full.svg" alt="Coding Conf Logo">
+    <!-- <span>Coding Conf</span> -->
+  </div>
+</header>
+
+<main>
+  <section class="container" id="formSection">
+    <div class="intro">
+      <h1>Your Journey to Coding Conf 2026 Starts Here!</h1>
+      <p>Secure your spot at next year's biggest developer event.</p>
+    </div>
+
+    <form id="ticketForm">
+      <div class="form-control">
+        <label>Upload Avatar</label>
+        <div class="upload-area" id="dropZone">
+          <input type="file" id="avatar" accept="image/png, image/jpeg" hidden>
+          <div class="upload-content">
+            <img src="icon-upload.svg" class="icon-box"></img>
+            <p id="uploadHint">Drag and drop or click to upload</p>
+          </div>
+        </div>
+        
+      </div>
+      <div class="input-hint">
+        <div class="tooltip">
+           <img src="icon-info.svg" id="infoIcon" alt="">
+           <span class="tooltip-text">Lorem ipsum dolor sit amet consectetur.</span>
+        </div>
+       
+        <span>Upload Your Photo (JPG or PNG, max size 500KB)</span>
+      </div>
+
+      <div class="form-control">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Jane Doe" required>
+      </div>
+
+      <div class="form-control">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="example@email.com" required>
+      </div>
+
+      <div class="form-control">
+        <label for="github">GitHub Username</label>
+        <div class="input-with-icon">
+          <span class="prefix">@</span>
+          
+          <input type="text" id="github" placeholder="yourusername" required>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Generate My Ticket</button>
+    </form>
+  </section>
+
+  <section class="container hidden" id="ticketSection">
+    <div class="success-message">
+      <h1>Congrats, <span id="userName" class="highlight"></span>!</h1>
+      <p>Your ticket is ready. 
+        We've sent a copy to <span id="userEmail" class="email-text"></span>.</p>
+    </div>
+
+    <div class="ticket-card">
+      <div class="ticket-left">
+        <div class="ticket-header">
+          <div class="logo">
+             <img src="logo-full.svg" alt="Coding Conf Logo">
+             <!-- <span>Coding Conf</span> -->
+          </div>
+          <p class="conf-date">Jan 31, 2026 / Austin, TX</p>
+        </div>
+        
+        <div class="ticket-footer">
+          <img id="ticketAvatar" src="" alt="User Avatar">
+          <div class="ticket-user-meta">
+            <h3 id="ticketName"></h3>
+            <!-- <img src="icon-github.svg" id="gitid" alt="" > -->
+            <p id="ticketGithub"></p>
+          </div>
+        </div>
+      </div>
+      <div class="ticket-right">
+        <span class="ticket-num">#<span id="ticketId"></span></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="script2.js"></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+:root {
+  --primary-accent: #f06a52; /* Coral from the ticket border */
+  --text-main: #ffffff;
+  --text-muted: #d1d5db;
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  /* Main background image */
+  
+  background: url('background-desktop.png') no-repeat center center/cover fixed;
+  
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-attachment: fixed;
+}
+
+.bg-pattern-lines,
+.bg-pattern-top,
+.bg-pattern-bottom,
+.bg-pattern-circle {
+  position: absolute;
+  z-index: 0;          /* Puts them at the bottom level */
+  pointer-events: none; /* Allows you to click "through" the images */
+  
+}
+
+.bg-pattern-lines {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6; /* Adjust opacity if the lines are too strong */
+}
+
+.bg-pattern-top {
+  top: 20px;
+  right: 0;
+  width: 300px; /* Adjust size based on preference */
+}
+.bg-pattern-bottom {
+  bottom:0px;
+  left:0px;
+  width: 400px; /* This one is usually larger in the design */
+  position: absolute;
+  
+  
+}
+
+.bg-pattern-circle {
+  top: 15%;
+  left: 10%;
+  width: 150px;
+}
+
+.main-header {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 300px;
+  height: 80px;
+}
+
+/* .logo span {
+  font-size: 2.3rem;
+  font-weight: 700;
+} */
+.input-hint {
+  display: flex;
+  align-items: center; /* Vertically centers the icon with the text */
+  gap: 8px;            /* Adds space between the icon and the text */
+  font-size: 0.8rem;
+  color: #8d929b;      /* Muted text color */
+  margin-top: 10px;
+}
+
+.input-hint img {
+  width: 20px;         /* Sets a standard icon size */
+  height: 16px;
+  opacity: 0.8;        /* Makes it blend slightly better with the dark theme */
+}
+.tooltip {
+  position: relative; /* Anchor point for positioning text */
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Tooltip Text: Hidden by default */
+.tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  
+  color:#8d929b;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  
+  /* Position the text */
+  position: absolute;
+  bottom: 125%; /* Places it above the icon */
+  left: 50%;
+  transform: translateX(-50%); /* Centers it perfectly */
+  
+  /* Optional: Fade in effect */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* The Magic: Show text on hover */
+.tooltip:hover .tooltip-text {
+  
+  visibility: visible;
+  opacity: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+/* Form Section Styling with Wavy Background */
+#formSection {
+  position: relative;
+  /* Subtle wavy line background */
+  background: url(pattern-circle.svg) no-repeat top right/50%; 
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  color: var(--text-muted);
+}
+
+/* Form Controls */
+.form-control {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 14px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Upload Area */
+.upload-area {
+  background: var(--glass);
+  border: 2px dashed var(--glass-border);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-area:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.icon-box {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+.file-info {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Input with Icon */
+.input-with-icon {
+  position: relative;
+}
+
+.prefix {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.input-with-icon input {
+  padding-left: 35px;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary-accent);
+  color: var(--text-main);
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Ticket Section */
+.success-message {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.success-message h1 {
+  font-size: 2rem;
+}
+
+.highlight {
+  background: linear-gradient(to right, var(--primary-accent), #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.email-text {
+  color: var(--primary-accent);
+}
+
+/* Ticket Card */
+.ticket-card {
+  /* Ticket shape background */
+  background: url('pattern-ticket.svg') no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  max-width: 500px;
+  height: 240px; /* Fixed height based on image aspect ratio */
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-main);
+}
+
+.ticket-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-header .logo img {
+  width: 120px;
+  height: 40px;
+  margin-top: 20px;
+
+}
+
+/* .ticket-header .logo span {
+  font-size: 1.1rem;
+} */
+
+.conf-date {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  /* margin-top: 4px; */
+  margin-left: 30px;
+}
+
+.ticket-footer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#ticketAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  border: 2px solid var(--primary-accent);
+  object-fit: cover;
+  margin-bottom:15px;
+}
+
+.ticket-user-meta h3 {
+  font-size: 1.3rem;
+  
+}
+
+.ticket-user-meta p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  
+  
+}
+
+.ticket-right {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px dashed rgba(255, 255, 255, 0.3);
+  padding-left: 20px;
+  margin-right: 10px;
+}
+
+.ticket-num {
+  font-family: monospace;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.hidden {
+  display: none;
+}
